@@ -1,0 +1,5 @@
+# Java Project Files
+/shelf/
+.idea
+out
+*.iml
