@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.Random;
 
-public class Car {
+public class Car_O {
 
     // enum 타입
     enum StatusType { available, checkedOut, inService, discarded, sold }
@@ -25,7 +25,7 @@ public class Car {
     private int mileage;
 
     // 클래스 생성자
-    Car(Date d, int m) {
+    Car_O(Date d, int m) {
         // carID
         // 반복문을 통해 중복검사
         while(true) {
@@ -63,33 +63,33 @@ public class Car {
     public static void main(String[] args) throws ParseException {
 
         // 객체 생성
-        Car c1 = new Car(dateformat.parse("2022-04-05"), 100000);
-        Car c2 = new Car(dateformat.parse("2022-11-17"), 3000);
-        Car c3 = new Car(dateformat.parse("2022-11-29"), 50000);
-        Car c4 = new Car(dateformat.parse("2023-01-01"), 0);
-        Car c5 = new Car(dateformat.parse("2023-02-27"), 2000);
+        Car_O c1 = new Car_O(dateformat.parse("2022-04-05"), 100000);
+        Car_O c2 = new Car_O(dateformat.parse("2022-11-17"), 3000);
+        Car_O c3 = new Car_O(dateformat.parse("2022-11-29"), 50000);
+        Car_O c4 = new Car_O(dateformat.parse("2023-01-01"), 0);
+        Car_O c5 = new Car_O(dateformat.parse("2023-02-27"), 2000);
 
         // 배열에 저장하기
-        Car[] carArray = new Car[] {c1, c2, c3, c4, c5};
+        Car_O[] carArray = new Car_O[] {c1, c2, c3, c4, c5};
 
         // 결과 출력
         System.out.println("< Car Information >");
         System.out.println("-------------------------------------------------------");
-        for (Car car : carArray)
+        for (Car_O car : carArray)
             car.printInfo();
         System.out.println(); // 줄바꿈
         // 상태 변경후 재출력
         c1.setStatus(StatusType.checkedOut);
         System.out.println("< Car Information >");
         System.out.println("-------------------------------------------------------");
-        for (Car car : carArray)
+        for (Car_O car : carArray)
             car.printInfo();
         System.out.println(); // 줄바꿈
         // 날짜 데이터를 기준으로 내림차순 정렬후 재출력
         // Comparator 정의
-        Comparator<Car> comparator = new Comparator<>() {
+        Comparator<Car_O> comparator = new Comparator<>() {
             @Override
-            public int compare(Car a, Car b) {
+            public int compare(Car_O a, Car_O b) {
                 // 내림차순에 활용되도록 리턴
                 return b.datePurchased.compareTo(a.datePurchased);
             }
@@ -99,9 +99,10 @@ public class Car {
         // (a, b) -> a.datePurchased.compareTo(b.datePurchased)
         System.out.println("< Car Information >");
         System.out.println("-------------------------------------------------------");
-        for (Car car : carArray)
+        for (Car_O car : carArray)
             car.printInfo();
 
     }
 
 }
+
