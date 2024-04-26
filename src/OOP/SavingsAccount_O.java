@@ -13,7 +13,7 @@ class BankAccount_O {
     }
 
     // Bank_System methods
-    Boolean deposit(double amount) {
+    boolean deposit(double amount) {
         // Amount validation
         if(amount <= 0.0) {
             System.out.println("Invalid amount to deposit!");
@@ -24,7 +24,7 @@ class BankAccount_O {
         return true;
     }
 
-    Boolean withdraw(double amount) {
+    boolean withdraw(double amount) {
         // Amount validation
         if (amount <= 0.0) {
             System.out.println("Invalid amount to withdraw!");
@@ -71,7 +71,7 @@ public class SavingsAccount_O extends BankAccount_O {
     public static void main(String[] args) {
 
         // Local field
-        Boolean flag;
+        boolean flag;
         String info;
         double interest;
 

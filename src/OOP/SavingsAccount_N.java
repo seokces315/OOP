@@ -16,7 +16,7 @@ class BankCustomer {
     }
 
     // Account methods
-    Boolean addAccount(BankAccount_N acct) {
+    boolean addAccount(BankAccount_N acct) {
         // Duplication check
         for(BankAccount_N account : myAccounts) {
             if(account == acct) {
@@ -30,7 +30,7 @@ class BankCustomer {
         return true;
     }
 
-    Boolean deleteAccount(int accountNumber) {
+    boolean deleteAccount(int accountNumber) {
         // Validation check
         for(BankAccount_N account : myAccounts) {
             if(account.getAccountNumber() == accountNumber) {
@@ -72,7 +72,7 @@ class BankAccount_N {
     int getAccountNumber() { return accountNumber; }
 
     // Bank_System methods
-    Boolean deposit(double amount) {
+    boolean deposit(double amount) {
         // Amount validation
         if(amount <= 0.0) {
             System.out.println("Invalid amount to deposit!");
@@ -83,7 +83,7 @@ class BankAccount_N {
         return true;
     }
 
-    Boolean withdraw(double amount) {
+    boolean withdraw(double amount) {
         // Amount validation
         if (amount <= 0.0) {
             System.out.println("Invalid amount to withdraw!");
@@ -131,7 +131,7 @@ public class SavingsAccount_N extends BankAccount_N {
     public static void main(String[] args) {
 
         // Local field
-        Boolean flag;
+        boolean flag;
         double interest;
 
         // Create an instance of BankCustomer
