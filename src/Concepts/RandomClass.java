@@ -1,4 +1,4 @@
-package OOP;
+package Concepts;
 
 import java.util.Arrays;
 import java.util.InputMismatchException;

@@ -1,4 +1,4 @@
-package OOP;
+package Concepts;
 
 class DepositException extends Exception { }
 class WithdrawException extends Exception { }
