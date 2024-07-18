@@ -1,13 +1,13 @@
-package Concepts;
+package Cnpt06;
 
-class BankAccount_O {
+class BankAccount {
 
     // Instance field
     protected final int accountNumber;
     protected double balance;
 
     // Constructor
-    BankAccount_O(int accountNumber) {
+    BankAccount(int accountNumber) {
         this.accountNumber = accountNumber;
         balance = 0.0;
     }
@@ -54,13 +54,13 @@ class BankAccount_O {
 
 }
 
-public class SavingsAccount_O extends BankAccount_O {
+public class SavingsAccount extends BankAccount {
 
     // Class field
     private static double interestRate = 0.02;
 
     // Constructor
-    SavingsAccount_O(int accountNumber) {
+    SavingsAccount(int accountNumber) {
         // invokes its superclass
         super(accountNumber);
     }
@@ -76,7 +76,7 @@ public class SavingsAccount_O extends BankAccount_O {
         double interest;
 
         // Create an instance of Bank_Account
-        BankAccount_O bank = new BankAccount_O(9740322);
+        BankAccount bank = new BankAccount(9740322);
         // Deposit $100
         flag = bank.deposit(100);
         if(!flag)
@@ -88,7 +88,7 @@ public class SavingsAccount_O extends BankAccount_O {
         System.out.println(); // 줄바꿈
 
         // Create an instance of Savings_Account
-        SavingsAccount_O savings = new SavingsAccount_O(3901012);
+        SavingsAccount savings = new SavingsAccount(3901012);
         // Deposit $200
         flag = savings.deposit(200);
         if(!flag)

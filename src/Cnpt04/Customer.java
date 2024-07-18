@@ -1,4 +1,4 @@
-package Concepts;
+package Cnpt04;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 
-class Car_N {
+class Car {
 
     // enum 변수
     public enum StatusType { available, checkedOut, inService, discarded, sold }
 
     // static 변수
-    public static ArrayList<Car_N> carList = new ArrayList<>();
+    public static ArrayList<Car> carList = new ArrayList<>();
     static SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
 
     // 멤버 변수
@@ -22,7 +22,7 @@ class Car_N {
     private int mileage;
 
     // 클래스 생성자
-    Car_N(Date d, int m) {
+    Car(Date d, int m) {
         // carID
         // 지역 변수
         Random generator = new Random();
@@ -34,7 +34,7 @@ class Car_N {
 
             // 반복문을 통해 중복검사
             flag = false;
-            for (Car_N car : carList) {
+            for (Car car : carList) {
                 // customerID 비교
                 if (car.carID == carID) {
                     flag = true; // flag 변화시키기
@@ -75,13 +75,13 @@ class Car_N {
 
 }
 
-public class Customer_O {
+public class Customer {
 
     // enum 타입
     public enum CustomerStatusType { silver, gold, diamond }
 
     // static 변수
-    public static ArrayList<Customer_O> cumstomerList = new ArrayList<>();
+    public static ArrayList<Customer> cumstomerList = new ArrayList<>();
 
     // 멤버 변수
     private int customerID; // 10000 ~ 99999
@@ -92,7 +92,7 @@ public class Customer_O {
     private CustomerStatusType cStatus;
 
     // 클래스 생성자
-    Customer_O(String n, String d) {
+    Customer(String n, String d) {
         // customerID
         // 지역 변수
         Random generator = new Random();
@@ -104,7 +104,7 @@ public class Customer_O {
 
             // 반복문을 통해 중복검사
             flag = false;
-            for (Customer_O customer : cumstomerList) {
+            for (Customer customer : cumstomerList) {
                 // customerID 비교
                 if (customer.customerID == customerID) {
                     flag = true; // flag 변화시키기
@@ -165,23 +165,23 @@ public class Customer_O {
     public static void main(String[] args) throws ParseException {
 
         // Customer 객체 생성
-        Customer_O cust1 = new Customer_O("홍길동", "01-12-234567-78");
-        Customer_O cust2 = new Customer_O("조석현", "00-00-000000-00");
+        Customer cust1 = new Customer("홍길동", "01-12-234567-78");
+        Customer cust2 = new Customer("조석현", "00-00-000000-00");
         // 반복문으로 결과 출력
         System.out.println("< Customer Information >");
         System.out.println("-------------------------------------------------------");
-        for(Customer_O customer : cumstomerList)
+        for(Customer customer : cumstomerList)
             customer.printInfo();
         System.out.println(); // 줄바꿈
 
         // Car 객체 생성
-        Car_N c3 = new Car_N(Car_N.dateformat.parse("2022-11-29"), 50000);
-        Car_N c4 = new Car_N(Car_N.dateformat.parse("2023-01-01"), 0);
-        Car_N c5 = new Car_N(Car_N.dateformat.parse("2023-02-27"), 2000);
+        Car c3 = new Car(Car.dateformat.parse("2022-11-29"), 50000);
+        Car c4 = new Car(Car.dateformat.parse("2023-01-01"), 0);
+        Car c5 = new Car(Car.dateformat.parse("2023-02-27"), 2000);
         // 반복문으로 결과 출력
         System.out.println("< Car Information >");
         System.out.println("-------------------------------------------------------");
-        for(Car_N car : Car_N.carList)
+        for(Car car : Car.carList)
             car.printInfo();
         System.out.println(); // 줄바꿈
 
@@ -191,7 +191,7 @@ public class Customer_O {
         // 반복문으로 결과 출력
         System.out.println("< Customer Information >");
         System.out.println("-------------------------------------------------------");
-        for(Customer_O customer : cumstomerList)
+        for(Customer customer : cumstomerList)
             customer.printInfo();
 
     }

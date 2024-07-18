@@ -1,4 +1,4 @@
-package Concepts;
+package Cnpt02;
 
 import java.util.Arrays;
 import java.util.InputMismatchException;

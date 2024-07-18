@@ -1,4 +1,4 @@
-package Concepts;
+package Cnpt01;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

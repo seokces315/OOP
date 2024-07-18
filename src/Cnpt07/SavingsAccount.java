@@ -1,4 +1,4 @@
-package Concepts;
+package Cnpt07;
 
 import java.util.ArrayList;
 
@@ -7,7 +7,7 @@ class BankCustomer {
     // Instance field
     private final int IDNumber;
     private final String name;
-    private ArrayList<BankAccount_N> myAccounts = new ArrayList<>();
+    private ArrayList<BankAccount> myAccounts = new ArrayList<>();
 
     // Constructor
     BankCustomer(int IDNumber, String name) {
@@ -16,9 +16,9 @@ class BankCustomer {
     }
 
     // Account methods
-    boolean addAccount(BankAccount_N acct) {
+    boolean addAccount(BankAccount acct) {
         // Duplication check
-        for(BankAccount_N account : myAccounts) {
+        for(BankAccount account : myAccounts) {
             if(account == acct) {
                 System.out.println("This account is already registered!");
                 return false;
@@ -32,7 +32,7 @@ class BankCustomer {
 
     boolean deleteAccount(int accountNumber) {
         // Validation check
-        for(BankAccount_N account : myAccounts) {
+        for(BankAccount account : myAccounts) {
             if(account.getAccountNumber() == accountNumber) {
                 myAccounts.remove(account); // remove the account
                 return true;
@@ -48,7 +48,7 @@ class BankCustomer {
         System.out.printf("(Customer %d)\n", IDNumber);
         System.out.printf("Name : %s\n", name);
         System.out.println("### Account Information ###");
-        for(BankAccount_N account : myAccounts) {
+        for(BankAccount account : myAccounts) {
             account.printAccountInfo();
             System.out.println(); // 줄바꿈
         }
@@ -56,14 +56,14 @@ class BankCustomer {
 
 }
 
-class BankAccount_N {
+class BankAccount {
 
     // Instance field
     private final int accountNumber;
     protected double balance;
 
     // Constructor
-    BankAccount_N(int accountNumber) {
+    BankAccount(int accountNumber) {
         this.accountNumber = accountNumber;
         balance = 0.0;
     }
@@ -107,13 +107,13 @@ class BankAccount_N {
 
 }
 
-public class SavingsAccount_N extends BankAccount_N {
+public class SavingsAccount extends BankAccount {
 
     // Class field
     private static double interestRate = 0.02;
 
     // Constructor
-    SavingsAccount_N(int accountNumber) {
+    SavingsAccount(int accountNumber) {
         // invokes its superclass
         super(accountNumber);
     }
@@ -142,7 +142,7 @@ public class SavingsAccount_N extends BankAccount_N {
         System.out.println(); // 줄바꿈
 
         // Create an instance of BankAccount
-        BankAccount_N bank = new BankAccount_N(9740322);
+        BankAccount bank = new BankAccount(9740322);
         // Deposit $500
         flag = bank.deposit(500);
         if(!flag)
@@ -153,7 +153,7 @@ public class SavingsAccount_N extends BankAccount_N {
         System.out.println(); // 줄바꿈
 
         // Create an instance of SavingsAccount
-        SavingsAccount_N savings = new SavingsAccount_N(3901012);
+        SavingsAccount savings = new SavingsAccount(3901012);
         // Deposit $1000
         flag = savings.deposit(1000);
         if(!flag)
